@@ -4,9 +4,17 @@
   <hr />
 
   <app-auth />
-  @if (isAdmin()) {
+  <!-- @if (isAdmin()) {
   <p>Only admins can see this.</p>
-  }
+  } -->
 
   <!-- <p *ngIf="isAdmin()">Only admins can see this.</p> -->
+
+  <!--
+  adding an asterisk to a directive usage is syntactic sugar
+  for using an ng-template with that directive.
+  here we are using the directive with an ng-template so no asterisk is needed -->
+  <ng-template appAuth="admin">
+    <p>Only admins can see this.</p>
+  </ng-template>
 </main>
